@@ -1,0 +1,214 @@
+{% load staticfiles %}
+
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <title>MFW Daily - Sometimes you just have to make a face.</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+        <meta name="HandheldFriendly" content="True">
+        <meta name="MobileOptimized" content="320">
+    
+        <!-- Favicon.ico placeholder -->
+        <link rel="shortcut icon" href="{% static "img/ink-favicon.ico" %}">
+        
+        <!-- Apple icon placeholder -->
+        <link rel="apple-touch-icon-precomposed" href="{% static "img/touch-icon.57.png" %}">
+        <link rel="apple-touch-icon-precomposed" sizes="72x72" href="{% static "img/touch-icon.72.png" %}">
+        <link rel="apple-touch-icon-precomposed" sizes="114x114" href="{% static "img/touch-icon.114.png" %}">
+
+        <!-- Apple splash screen placeholder -->
+        <link rel="apple-touch-startup-image" href="../img/splash.320x460.png" media="screen and (min-device-width: 200px) and (max-device-width: 320px) and (orientation:portrait)">
+        <link rel="apple-touch-startup-image" href="../img/splash.768x1004.png" media="screen and (min-device-width: 481px) and (max-device-width: 1024px) and (orientation:portrait)">
+        <link rel="apple-touch-startup-image" href="../img/splash.1024x748.png" media="screen and (min-device-width: 481px) and (max-device-width: 1024px) and (orientation:landscape)">
+
+        <!-- Stylesheets -->
+        <link rel="stylesheet" href="{% static "css/testsass.css" %}">
+        <link rel="stylesheet" href="{% static "css/ink.css" %}">
+        <link rel="stylesheet" href="{% static "css/bjqs.css" %}">
+
+        
+        <!--[if IE 7 ]>
+            <link rel="stylesheet" href="../css/ink-ie7.css" type="text/css" media="screen" title="no title" charset="utf-8">
+        <![endif]-->
+
+        <!-- Javascripts -->
+        <script src="http://code.jquery.com/jquery-latest.min.js"></script>
+        <script type="text/javascript" src="{% static "js/holder.js" %}"></script>
+        <script type="text/javascript" src="{% static "js/ink.min.js" %}"></script>
+        <script type="text/javascript" src="{% static "js/ink-ui.min.js" %}"></script>
+        <script type="text/javascript" src="{% static "js/autoload.js" %}"></script>
+        <script type="text/javascript" src="{% static "js/ink.sticky.js" %}"></script>
+        <script type="text/javascript" src="{% static "js/html5shiv.js" %}"></script>
+        <!--<script type="text/javascript" src="{% static "js/bjqs-1.3.min.js" %}"></script> !-->
+        <script type="text/javascript" src="{% static "js/bjqs-1.3.js" %}"></script>
+<script type="text/javascript">
+        jQuery(document).ready(function($) {
+    $('#mfw-main').bjqs({
+        'width' : 600,
+        'height' : 400,
+        'responsive' : false,
+        'animtype' : 'fade',
+    });
+});
+</script>
+    </head>
+    <body>
+     <div class="vspace-left">
+            	<nav class="ink-navigation sticky ink-sticky-stuck" id="nav_menu" data-offset-top="10px" data-offset-bottom="30px">
+				   <ul class="menu vertical">
+				      <li><a href="#">Item</a></li>
+				      <li><a href="#">Item</a></li>
+				   </ul>
+				</nav>
+            </div>
+        <!-- Add your site or application content here -->
+        
+        <div class="ink-grid">
+
+            <header class="vspace">
+                <h1 class="mfw-header-text">MFW(?) Daily</h1>
+                <p>Sometimes you just have to make a face.</p>
+            </header>
+
+            <nav class="ink-navigation">
+                <ul class="horizontal menu black rounded shadowed">
+                    <li class="active">
+                        <a href="#">Home</a>
+                    </li>
+                    <li>
+                        <a href="#">About</a>
+                    </li>
+                    <li>
+                        <a href="#">Archives</a>
+                    </li>
+                    <li>
+                        <a href="#">Categories</a>
+                    </li>
+                    <li>
+                        <a href="#">Search</a>
+                    </li>
+                </ul>
+            </nav>
+	            <div class="vspace">
+	            	<h3 style="border:1px dashed #ccc;width:250px;margin:0 auto 10px;">[img]MFW...[/img]</h3>
+	                {% for thisMFW in varsIn.MFWList %}
+	                	<h3><span class="mfw-main-title">{{ thisMFW.mfw_title }}</span></h3>
+	                {% endfor %}
+
+	                <!--<div id="mfw-navigate-left">
+	                	<a href="#" data-direction="backward">
+	                		<img src="{% static "img/slider-arrow-left.jpg" %}">
+	                	</a>
+	                </div>!-->
+		                
+	                <div id="mfw-main">
+	                	<ul class="bjqs">
+	                		{% for thisMFW in varsIn.MFWList %}
+                			<li>
+                				<img class="mfw-image-main" src="{% static "img/mfw/mfw" %}{{thisMFW.mfw_img_num}}.gif" alt="{{ varsIn.thisMFW.mfw_img_alt }}">
+                			</li>
+                			{% endfor %}
+	                	</ul>
+	                </div>
+	                <!--<div id="mfw-navigate-right">
+	                	<a href="#" data-direction="forward">
+	                		<img src="{% static "img/slider-arrow-right.jpg" %}">
+	                	</a>
+	                </div>!-->
+	                <div id="mfw-main-text"><h4>{{ varsIn.MFW.mfw_text }}</h4></div>
+                	{% for thisMFWLink in varsIn.MFWLink %}
+                	<ul class="mfw-links-main">                	
+	               		{% for thisLink in thisMFWLink %}
+	                		<li>
+	                			<a href="{{ thisLink.mfw_content_link}}">{{ thisLink.mfw_content_text}}</a>
+	                		</li>
+	                	{% endfor %}
+                	</ul>
+                	{% endfor %}
+	                <div class="mfw-map">
+	                	{#{ varsIn.form.map }#}
+						{#{ varsIn.form.media.js }#}
+					</div>
+	            </div>
+	            
+	            <div class="column-group gutters">
+	                
+	                <div class="large-50">
+	                    <p>
+	                        Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+	                    </p>
+	                </div>
+	                <div class="large-50">
+	                    <p>
+	                        Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+	                    </p>
+	                </div>
+	                
+	            </div>
+
+<!---	                        
+	            <h4>... thirds ...</h4>
+	            <div class="column-group gutters">
+	                
+	                <div class="large-33 medium-33 small-100">
+	                    <p>
+	                        Upon waking next morning about daylight, I found Queequeg's arm thrown over me in the most loving and affectionate manner. You had lmost thought I had been his wife. The counterpane was of patchwork, full of odd little parti-coloured squares and triangles; and this arm of his tattooed all ver with an interminable Cretan labyrinth of a figure, no two parts of which were of one precise shade&mdash;owing I suppose to his keeping his arm at sea nmethodically in sun and shade, his shirt sleeves irregularly rolled up at various times&mdash;this same arm of his, I say, looked for all the world like a trip of that same patchwork quilt.
+	                    </p>
+	                </div>
+	                <div class="large-33 medium-33 small-100">
+	                    <p>
+	                        Upon waking next morning about daylight, I found Queequeg's arm thrown over me in the most loving and affectionate manner. You had lmost thought I had been his wife. The counterpane was of patchwork, full of odd little parti-coloured squares and triangles; and this arm of his tattooed all ver with an interminable Cretan labyrinth of a figure, no two parts of which were of one precise shade&mdash;owing I suppose to his keeping his arm at sea nmethodically in sun and shade, his shirt sleeves irregularly rolled up at various times&mdash;this same arm of his, I say, looked for all the world like a trip of that same patchwork quilt.
+	                    </p>
+	                </div>
+	                <div class="large-33 medium-33 small-100">
+	                    <p>
+	                        Upon waking next morning about daylight, I found Queequeg's arm thrown over me in the most loving and affectionate manner. You had lmost thought I had been his wife. The counterpane was of patchwork, full of odd little parti-coloured squares and triangles; and this arm of his tattooed all ver with an interminable Cretan labyrinth of a figure, no two parts of which were of one precise shade&mdash;owing I suppose to his keeping his arm at sea nmethodically in sun and shade, his shirt sleeves irregularly rolled up at various times&mdash;this same arm of his, I say, looked for all the world like a trip of that same patchwork quilt.
+	                    </p>
+	                </div>
+	            </div>
+
+	            <h4>... fourths and more.</h4>
+	            <div class="column-group gutters">
+	                <div class="large-25 medium-50 small-100">
+	                    <p>
+	                        Upon waking next morning about daylight, I found Queequeg's arm thrown over me in the most loving and affectionate manner. You had lmost thought I had been his wife. The counterpane was of patchwork, full of odd little parti-coloured squares and triangles; and this arm of his tattooed all ver with an interminable Cretan labyrinth of a figure, no two parts of which were of one precise shade&mdash;owing I suppose to his keeping his arm at sea nmethodically in sun and shade, his shirt sleeves irregularly rolled up at various times&mdash;this same arm of his, I say, looked for all the world like a trip of that same patchwork quilt.
+	                    </p>
+	                </div>
+	                <div class="large-25 medium-50 small-100">
+	                    <p>
+	                        Upon waking next morning about daylight, I found Queequeg's arm thrown over me in the most loving and affectionate manner. You had lmost thought I had been his wife. The counterpane was of patchwork, full of odd little parti-coloured squares and triangles; and this arm of his tattooed all ver with an interminable Cretan labyrinth of a figure, no two parts of which were of one precise shade&mdash;owing I suppose to his keeping his arm at sea nmethodically in sun and shade, his shirt sleeves irregularly rolled up at various times&mdash;this same arm of his, I say, looked for all the world like a trip of that same patchwork quilt.
+	                    </p>
+	                </div>
+	                <div class="large-25 medium-50 small-100">
+	                    <p>
+	                        Upon waking next morning about daylight, I found Queequeg's arm thrown over me in the most loving and affectionate manner. You had lmost thought I had been his wife. The counterpane was of patchwork, full of odd little parti-coloured squares and triangles; and this arm of his tattooed all ver with an interminable Cretan labyrinth of a figure, no two parts of which were of one precise shade&mdash;owing I suppose to his keeping his arm at sea nmethodically in sun and shade, his shirt sleeves irregularly rolled up at various times&mdash;this same arm of his, I say, looked for all the world like a trip of that same patchwork quilt.
+	                    </p>
+	                </div>
+	                <div class="large-25 medium-50 small-100">
+	                    <p>
+	                        Upon waking next morning about daylight, I found Queequeg's arm thrown over me in the most loving and affectionate manner. You had lmost thought I had been his wife. The counterpane was of patchwork, full of odd little parti-coloured squares and triangles; and this arm of his tattooed all ver with an interminable Cretan labyrinth of a figure, no two parts of which were of one precise shade&mdash;owing I suppose to his keeping his arm at sea nmethodically in sun and shade, his shirt sleeves irregularly rolled up at various times&mdash;this same arm of his, I say, looked for all the world like a trip of that same patchwork quilt.
+	                    </p>
+	                </div>
+	            </div> !-->
+        </div>
+
+        <footer>
+            <div class="ink-grid">
+                <nav class="ink-navigation">
+                    <ul class="menu horizontal">
+                        <li><a href="#">Contact</a></li>
+                        <li><a href="#">Privacy Policy</a></li>
+                    </ul>
+                </nav>
+                <p class="small vspace">
+                    All stuff reserved.<br>
+                    Stuff is a trademark created at the Stuff that makes Stuff
+                </p>
+            </div>
+        </footer>
+        
+    </body>
+</html>
