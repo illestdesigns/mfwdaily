@@ -13,6 +13,8 @@ urlpatterns = patterns('',
     #url(r'^static/(?P<path>.*)$', 'django.views.static.serve', {'document_root': settings.STATIC_ROOT}),
     #static(settings.STATIC_URL, document_root=settings.STATIC_ROOT),
     #static(settings.STATIC_URL,'django.views.static.serve',{'document_root': settings.STATIC_URL}),
+    url(r'^static/(?P<path>.*)$', 'django.views.static.serve', {'document_root': settings.STATIC_ROOT}),
+    #url(r'^admin/doc/', include('django.contrib.admindocs.urls')), #added
     url(r'^admin/', include(admin.site.urls)),
     (r'', include('gmapi.urls.media')), # Use for debugging only.
     #(r'^$', 'myapp.views.index'),

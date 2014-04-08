@@ -8,7 +8,7 @@ class MFW(models.Model):
 		return self.mfw_title
 
     mfw_title = models.CharField(max_length=200)
-    mfw_date = models.DateField()
+    mfw_date = models.DateField(blank=True, null=True)
     mfw_text = models.CharField(max_length=200)
     #mfw_link = models.ForeignKey(CoinWebsite, blank=True, null=True)
  
@@ -17,10 +17,10 @@ class MFW(models.Model):
     #cash_value = models.FloatField(blank=True, null=True, editable=False)
  
     mfw_img_num = models.CharField(max_length=300)
-    mfw_img_alt = models.CharField(max_length=200)
+    mfw_img_alt = models.CharField(max_length=200, blank=True, null=True)
     
-    mfw_img_width = models.IntegerField()
-    mfw_img_height = models.IntegerField()
+    mfw_img_width = models.IntegerField(blank=True, null=True)
+    mfw_img_height = models.IntegerField(blank=True, null=True)
 
     active = models.BooleanField()
     timestamp = models.DateTimeField(auto_now_add=True)

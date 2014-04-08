@@ -60,6 +60,7 @@ def home(request):
 	#result_list = cursor.fetchall()
 	links = []
 	this_mfw = []
+	all_links = []
 
 	if current_mfw: #if there is an object from today
 		print >> sys.stderr, current_mfw
@@ -70,7 +71,6 @@ def home(request):
 		this_mfw = current_mfw[0]
 
 		#mfw_links = MFWLink.objects.filter(mfw_object_id = current_mfw[0]['id']).values()
-		all_links = []
 		
 		for mfw_item in current_mfw:
 			mfw_links = MFWLink.objects.filter(mfw_object_id = mfw_item['id']).values()
