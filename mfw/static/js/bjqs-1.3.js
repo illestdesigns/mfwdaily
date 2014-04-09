@@ -631,6 +631,9 @@
             $('.mfw-main-title').eq($('.bjqs-slide').filter(':visible').index()).fadeIn()
             $('.mfw-links-main').hide()
             $('.mfw-links-main').eq($('.bjqs-slide').filter(':visible').index()).slideToggle()
+            $('#mfw-main-text span').hide()
+            $('#mfw-main-text span').eq($('.bjqs-slide').filter(':visible').index()).fadeIn()
+            
         }
 
         var go = function(direction, position) {

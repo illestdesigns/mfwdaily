@@ -118,7 +118,11 @@
 	                		<img src="{% static "img/slider-arrow-right.jpg" %}">
 	                	</a>
 	                </div>!-->
-	                <div id="mfw-main-text"><span>{{ varsIn.MFW.mfw_text }}</span></div>
+	                <div id="mfw-main-text">
+                    {% for thisMFW in varsIn.MFWList %}
+                        <span>{{ thisMFW.mfw_text }}</span>
+                    {% endfor %}
+                    </div>
                 	{% for thisMFWLink in varsIn.MFWLink %}
                 	<ul class="mfw-links-main">                	
 	               		{% for thisLink in thisMFWLink %}
