@@ -104,6 +104,9 @@
             $('.mfw-links-main').eq(0).show()
             $('.mfw-main-title').hide()
             $('.mfw-main-title').eq(0).show()
+            $('#mfw-main-text span').hide()
+            $('#mfw-main-text span').eq(0).show()
+            
             //$('.mfw-links-main').eq($('.bjqs-slide').filter(':visible').index()).show()
             // differentiate slider li from content li
             $slides.addClass('bjqs-slide');
