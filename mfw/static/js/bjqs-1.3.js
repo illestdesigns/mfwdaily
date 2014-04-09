@@ -99,7 +99,8 @@
             
         // run through options and initialise settings
         var init = function() {
-
+            $('.mfw-link').hide()
+            $('.mfw-link-1').show()
             $('.mfw-links-main').hide()
             $('.mfw-links-main').eq(0).show()
             $('.mfw-main-title').hide()
@@ -627,16 +628,20 @@
 
         var updateText = function() {
         //RM ADDED
-            console.log("loggggging")
-            console.log($('.bjqs-slide').filter(':visible').index())
+            //console.log("loggggging")
+            //console.log($('.bjqs-slide').filter(':visible').index())
             //console.log(state.currentIndex)
             //console.log(state.currentslide)
+            var slideNum = $('.bjqs-slide').filter(':visible').index()
             $('.mfw-main-title').hide()
-            $('.mfw-main-title').eq($('.bjqs-slide').filter(':visible').index()).fadeIn()
-            $('.mfw-links-main').hide()
-            $('.mfw-links-main').eq($('.bjqs-slide').filter(':visible').index()).slideToggle()
+            $('.mfw-main-title').eq(slideNum).fadeIn()
+            //$('.mfw-links-main').hide()
+            //$('.mfw-links-main').eq($('.bjqs-slide').filter(':visible').index()).fadeIn()
+            $('.mfw-link').hide()
+            $('.mfw-link-'+(slideNum+1)).fadeIn()
+
             $('#mfw-main-text span').hide()
-            $('#mfw-main-text span').eq($('.bjqs-slide').filter(':visible').index()).fadeIn()
+            $('#mfw-main-text span').eq(slideNum).fadeIn()
             
         }
 

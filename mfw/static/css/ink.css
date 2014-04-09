@@ -9550,7 +9550,7 @@ figcaption.dark {
 .vspace-left ul.menu li a{color:#eee;}
 .vspace-left ul.menu li{border-bottom:1px dashed #eee;}
 .vspace-left ul.menu li:last-child{border-bottom:0;}
-img.mfw-image-main {/*max-width:500px;*/margin:25px 0 15px;max-width:100%;}
+img.mfw-image-main {/*max-width:500px;*/margin:25px 0 0;max-width:100%;}
 ul.mfw-links-main{list-style-type: disc;text-align: left;width:600px;margin:0 auto 15px;}
 
 #mfw-navigate-left, #mfw-navigate-right, #mfw-main{display:inline-block;vertical-align:top;}
@@ -9570,6 +9570,7 @@ div.gmap img{position:relative !important;}
   }
 #mfw-main {width:600px;}
 #mfw-main-text {margin: 10px 0;}
+#mfw-main-text span {height:30px;}
 .mfw-header-text {border:1px dotted #ccc;
   width:500px;
   margin:0 auto;
@@ -9618,3 +9619,9 @@ ol.bjqs-markers li a:hover{
 p.bjqs-caption{
   background: rgba(255,255,255,0.5);
 }
+
+#mfw-links-wrapper{
+  min-height:100px;
+}
+
+header.vspace{margin-bottom:1em;}

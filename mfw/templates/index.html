@@ -124,15 +124,19 @@
                         <span>{{ thisMFW.mfw_text }}</span>
                     {% endfor %}
                     </div>
-                	{% for thisMFWLink in varsIn.MFWLink %}
-                	<ul class="mfw-links-main">                	
-	               		{% for thisLink in thisMFWLink %}
-	                		<li>
-	                			<a href="{{ thisLink.mfw_content_link}}">{{ thisLink.mfw_content_text}}</a>
-	                		</li>
-	                	{% endfor %}
-                	</ul>
-                	{% endfor %}
+                    <div id="mfw-links-wrapper">
+                        <ul class="mfw-links-main">                 
+                    	{% for thisMFWLink in varsIn.MFWLink %}
+                    	
+    	               		{% for thisLink in thisMFWLink %}
+    	                		<li class="mfw-link-{{ forloop.parentloop.counter }} mfw-link">
+    	                			<a href="{{ thisLink.mfw_content_link}}">{{ thisLink.mfw_content_text}}</a>
+    	                		</li>
+    	                	{% endfor %}
+                    	
+                    	{% endfor %}
+                        </ul>
+                    </div>
 	                <div class="mfw-map">
 	                	{#{ varsIn.form.map }#}
 						{#{ varsIn.form.media.js }#}
