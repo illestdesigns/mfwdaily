@@ -106,7 +106,7 @@
             $('.mfw-main-title').eq(0).show()
             $('#mfw-main-text span').hide()
             $('#mfw-main-text span').eq(0).show()
-            
+
             //$('.mfw-links-main').eq($('.bjqs-slide').filter(':visible').index()).show()
             // differentiate slider li from content li
             $slides.addClass('bjqs-slide');
@@ -465,6 +465,7 @@
                 var offset_px   = ($wrapper.height() - $c_fwd.children('a').outerHeight()) / 4,
                     ratio       = (offset_px / settings.height) * 100,
                     offset      = ratio + '%';
+                    offset      = '20%'
 
                 $c_fwd.find('a').css('top', offset);
                 $c_prev.find('a').css('top', offset);
