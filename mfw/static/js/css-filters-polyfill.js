@@ -88,7 +88,8 @@
 					}
 				};
 				try{
-					xmlHttpCheck.send(null);
+					//Cancelled the try of sepia
+					//xmlHttpCheck.send(null);
 				} catch(e){}
 			},2000);
 			

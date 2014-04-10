@@ -9676,5 +9676,5 @@ header.vspace{margin-bottom:1em;}
 
 .md-content ul {width:230px;text-align:left;margin:0 auto !important;}
 .md-content ul li span {font-size:1em;}
-.md-content ul li span:first-child {display:inline-block;width:100px;text-align:left;color:#222;}
-.md-content ul li span:last-child {display:inline-block;width:100px;text-align:right;}
+.md-content ul li span:first-child {display:inline-block;width:80px;text-align:left;color:#222;}
+.md-content ul li span:last-child {display:inline-block;width:130px;text-align:right;}

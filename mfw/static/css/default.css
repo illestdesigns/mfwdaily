@@ -913,10 +913,14 @@ perspective effects (not including the modals and the overlay).
 		box-shadow: 0 -1px 0 rgba(0,0,0,0.1);
 	}
 	.vspace-left{display:none;}
+	ul.bjqs-controls.v-centered li.bjqs-next a{right:-20px !important;}
+	ul.bjqs-controls.v-centered li.bjqs-prev a{left:-20px !important;}
 }
 
 @media screen and (max-width: 32em) {
 	body { font-size: 75%; }
+	ul.bjqs-controls.v-centered li.bjqs-next a{right:0px !important; top: -3px !important;}
+	ul.bjqs-controls.v-centered li.bjqs-prev a{left:0px !important; top: -3px !important;}
 }
 
 @media screen and (max-width: 25em) {
