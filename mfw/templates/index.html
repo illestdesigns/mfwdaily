@@ -37,6 +37,7 @@
 
         <!-- Javascripts -->
         <script src="http://code.jquery.com/jquery-latest.min.js"></script>
+        <script type="text/javascript" src="{% static "js/mfwdaily.js" %}"></script>
         <script type="text/javascript" src="{% static "js/holder.js" %}"></script>
         <script type="text/javascript" src="{% static "js/ink.min.js" %}"></script>
         <script type="text/javascript" src="{% static "js/ink-ui.min.js" %}"></script>
@@ -73,7 +74,7 @@
                     <li><strong>Look:</strong> a modal window enjoys a certain kind of attention; just look at it and appreciate its presence.</li>
                     <li><strong>Close:</strong> click on the button below to close the modal.</li>
                 </ul>
-                <button class="md-close">Close me!</button>
+                <button class="md-close">Ok, got it!</button>
             </div>
         </div>
     </div>
@@ -81,7 +82,7 @@
     <div class="md-modal md-effect-13" id="about">
         <div class="md-content">
             <h3>About MFWDaily</h3>
-            <div>
+            <div class="mfw-about">
                 <p>This site was created out of boredom</p>
                 -Here are the basics:
                 <ul>
@@ -91,7 +92,7 @@
                     <li><span>When?</span><span>Everyday.</span></li>
                     <li><span>Why?</span><span>Just Because.</span></li>
                 </ul>
-                <button class="md-close">Close me!</button>
+                <button class="md-close">Ok, got it!</button>
             </div>
         </div>
     </div>
@@ -108,7 +109,7 @@
         <div class="ink-grid">
 
             <header class="vspace">
-                <h1 class="mfw-header-text">MFW(?) Daily</h1>
+                <a href="/"><h1 class="mfw-header-text">MFW(?) Daily</h1></a>
                 <p>Sometimes you just have to make a face.</p>
             </header>
             <!-- <button class="md-trigger" data-modal="modal-16">Blur</button> !-->
