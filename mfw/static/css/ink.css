@@ -9671,4 +9671,10 @@ header.vspace{margin-bottom:1em;}
 #mfw-outer-rounded{border-radius:15px;background:#fff;border:2px solid #ccc;padding:10px 0;max-width:100%;
 -webkit-box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1), 0 0 3px rgba(153, 153, 153, 0.6) inset;
   -moz-box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1), 0 0 3px rgba(153, 153, 153, 0.6) inset;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.4), 0 0 2px rgba(253, 253, 253, 0.6) inset;}
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.4), 0 0 2px rgba(253, 253, 253, 0.6) inset;
+}
+
+.md-content ul {width:230px;text-align:left;margin:0 auto !important;}
+.md-content ul li span {font-size:1em;}
+.md-content ul li span:first-child {display:inline-block;width:100px;text-align:left;color:#222;}
+.md-content ul li span:last-child {display:inline-block;width:100px;text-align:right;}

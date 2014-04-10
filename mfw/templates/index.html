@@ -28,6 +28,7 @@
         <link rel="stylesheet" href="{% static "css/testsass.css" %}">
         <link rel="stylesheet" href="{% static "css/ink.css" %}">
         <link rel="stylesheet" href="{% static "css/bjqs.css" %}">
+        <link rel="stylesheet" href="{% static "css/default.css" %}">
 
         
         <!--[if IE 7 ]>
@@ -42,21 +43,58 @@
         <script type="text/javascript" src="{% static "js/autoload.js" %}"></script>
         <script type="text/javascript" src="{% static "js/ink.sticky.js" %}"></script>
         <script type="text/javascript" src="{% static "js/html5shiv.js" %}"></script>
+        
         <!--<script type="text/javascript" src="{% static "js/bjqs-1.3.min.js" %}"></script> !-->
         <script type="text/javascript" src="{% static "js/bjqs-1.3.js" %}"></script>
-<script type="text/javascript">
-        jQuery(document).ready(function($) {
-    $('#mfw-main').bjqs({
-        'width' : 600,
-        'height' : 360,
-        'responsive' : false,
-        'animtype' : 'fade',
-        'animspeed' : 10000,
-    });
-});
-</script>
+        <script type="text/javascript" src="{% static "js/modernizr.custom.js" %}"></script>
+
+        <script type="text/javascript">
+                jQuery(document).ready(function($) {
+            $('#mfw-main').bjqs({
+                'width' : 600,
+                'height' : 360,
+                'responsive' : false,
+                'animtype' : 'fade',
+                'animspeed' : 10000,
+            });
+        });
+        </script>
     </head>
     <body>
+
+
+    <div class="md-modal md-effect-16" id="modal-16">
+        <div class="md-content">
+            <h3>Modal Dialog</h3>
+            <div>
+                <p>This is a modal window. You can do the following things with it:</p>
+                <ul>
+                    <li><strong>Read:</strong> modal windows will probably tell you something important so don't forget to read what they say.</li>
+                    <li><strong>Look:</strong> a modal window enjoys a certain kind of attention; just look at it and appreciate its presence.</li>
+                    <li><strong>Close:</strong> click on the button below to close the modal.</li>
+                </ul>
+                <button class="md-close">Close me!</button>
+            </div>
+        </div>
+    </div>
+    <!--4,9,11,13,17 !-->
+    <div class="md-modal md-effect-13" id="about">
+        <div class="md-content">
+            <h3>About MFWDaily</h3>
+            <div>
+                <p>This site was created out of boredom</p>
+                -Here are the basics:
+                <ul>
+                    <li><span>Who?</span><span>Me.</span></li>
+                    <li><span>What?</span><span>Stuff.</span></li>
+                    <li><span>Where?</span><span>Here.</span></li>
+                    <li><span>When?</span><span>Everyday.</span></li>
+                    <li><span>Why?</span><span>Because.</span></li>
+                </ul>
+                <button class="md-close">Close me!</button>
+            </div>
+        </div>
+    </div>
      <div class="vspace-left">
             	<nav class="ink-navigation sticky ink-sticky-stuck" id="nav_menu" data-offset-top="10px" data-offset-bottom="30px">
 				   <ul class="menu vertical">
@@ -73,14 +111,17 @@
                 <h1 class="mfw-header-text">MFW(?) Daily</h1>
                 <p>Sometimes you just have to make a face.</p>
             </header>
-
+            <!-- <button class="md-trigger" data-modal="modal-16">Blur</button> !-->
+                    <!-- special modal that will add a perspective class to the html element -->
+                    
+            <!-- <button class="md-trigger md-setperspective" data-modal="modal-18">Make way!</button> !-->
             <nav class="ink-navigation">
                 <ul class="horizontal menu black rounded shadowed">
                     <li class="active">
                         <a href="#">Home</a>
                     </li>
                     <li>
-                        <a href="#">About</a>
+                        <a href="#" class="md-trigger md-setperspective" data-modal="about">About</a>
                     </li>
                     <li>
                         <a href="#">Archives</a>
@@ -221,6 +262,19 @@
                 </p>
             </div>
         </footer>
+
         
+        <script type="text/javascript" src="{% static "js/classie.js" %}"></script>
+        <script type="text/javascript" src="{% static "js/modalEffects.js" %}"></script>
+
+        <!-- for the blur effect -->
+        <!-- by @derSchepp https://github.com/Schepp/CSS-Filters-Polyfill -->
+        <script>
+            // this is important for IEs
+            var polyfilter_scriptpath = '/js/';
+        </script>
+        <script type="text/javascript" src="{% static "js/cssParser.js" %}"></script>
+        <script type="text/javascript" src="{% static "js/css-filters-polyfill.js" %}"></script>
+        <div class="md-overlay"></div><!-- the overlay element -->
     </body>
 </html>
