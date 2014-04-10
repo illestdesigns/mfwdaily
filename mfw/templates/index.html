@@ -48,7 +48,7 @@
         jQuery(document).ready(function($) {
     $('#mfw-main').bjqs({
         'width' : 600,
-        'height' : 400,
+        'height' : 360,
         'responsive' : false,
         'animtype' : 'fade',
         'animspeed' : 10000,
@@ -104,16 +104,19 @@
 	                		<img src="{% static "img/slider-arrow-left.jpg" %}">
 	                	</a>
 	                </div>!-->
-		                
-	                <div id="mfw-main">
-	                	<ul class="bjqs">
-	                		{% for thisMFW in varsIn.MFWList %}
-                			<li>
-                				<img class="mfw-image-main" src="{% static "img/mfw/mfw" %}{{thisMFW.mfw_img_num}}.gif" alt="{{ varsIn.thisMFW.mfw_img_alt }}">
-                			</li>
-                			{% endfor %}
-	                	</ul>
-	                </div>
+                    <div id="mfw-main-wrapper">
+    	                <div id="mfw-main">
+    	                	<ul class="bjqs">
+    	                		{% for thisMFW in varsIn.MFWList %}
+                    			<li>
+                    				<img class="mfw-image-main" src="{% static "img/mfw/mfw" %}{{thisMFW.mfw_img_num}}.gif" alt="{{ varsIn.thisMFW.mfw_img_alt }}">
+                    			</li>
+                    			{% endfor %}
+
+    	                	</ul>
+    	                </div>
+                    </div>
+                    <div id="mfw-main-bottom"></div>
 	                <!--<div id="mfw-navigate-right">
 	                	<a href="#" data-direction="forward">
 	                		<img src="{% static "img/slider-arrow-right.jpg" %}">
@@ -130,7 +133,7 @@
                     	
     	               		{% for thisLink in thisMFWLink %}
     	                		<li class="mfw-link-{{ forloop.parentloop.counter }} mfw-link">
-    	                			<a href="{{ thisLink.mfw_content_link}}">{{ thisLink.mfw_content_text}}</a>
+    	                			<a href="{{ thisLink.mfw_content_link}}" target="_blank">{{ thisLink.mfw_content_text}}</a>
     	                		</li>
     	                	{% endfor %}
                     	

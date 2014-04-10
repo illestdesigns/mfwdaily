@@ -466,7 +466,7 @@
                 var offset_px   = ($wrapper.height() - $c_fwd.children('a').outerHeight()) / 4,
                     ratio       = (offset_px / settings.height) * 100,
                     offset      = ratio + '%';
-                    offset      = '20%'
+                    offset      = '90px'
 
                 $c_fwd.find('a').css('top', offset);
                 $c_prev.find('a').css('top', offset);

@@ -39,6 +39,7 @@ body {
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: none;
   height: 100%;
+  background:#f7f7f7;
 }
 a:focus {
   outline: thin dotted;
@@ -277,7 +278,8 @@ body {
   font-family: Times, "Times New Roman", serif;
 }
 a {
-  color: #0069d6;
+  /*color: #0069d6;*/
+  color: #444;
   text-decoration: none;
 }
 a:hover {
@@ -9551,7 +9553,20 @@ figcaption.dark {
 .vspace-left ul.menu li{border-bottom:1px dashed #eee;}
 .vspace-left ul.menu li:last-child{border-bottom:0;}
 img.mfw-image-main {/*max-width:500px;*/margin:25px 0 0;max-width:100%;}
-ul.mfw-links-main{list-style-type: disc;text-align: left;width:600px;margin:0 auto 15px;}
+ul.mfw-links-main{list-style-type: disc;text-align: left;width:600px;margin:0 auto 15px;
+background-image: -webkit-gradient(
+  linear,
+  left top,
+  left bottom,
+  color-stop(0, #DEDEDE),
+  color-stop(1, #A6A6A6)
+);
+background-image: -o-linear-gradient(bottom, #DEDEDE 0%, #A6A6A6 100%);
+background-image: -moz-linear-gradient(bottom, #DEDEDE 0%, #A6A6A6 100%);
+background-image: -webkit-linear-gradient(bottom, #DEDEDE 0%, #A6A6A6 100%);
+background-image: -ms-linear-gradient(bottom, #DEDEDE 0%, #A6A6A6 100%);
+background-image: linear-gradient(to bottom, #DEDEDE 0%, #A6A6A6 100%);
+}
 
 #mfw-navigate-left, #mfw-navigate-right, #mfw-main{display:inline-block;vertical-align:top;}
 #mfw-navigate-left, #mfw-navigate-right {margin-top:80px;padding:0 20px;opacity:0.3;}
@@ -9569,6 +9584,12 @@ div.gmap img{position:relative !important;}
   */
   }
 #mfw-main {width:600px;}
+#mfw-main-bottom {width:700px;
+border:1px solid #bbb;background:#eee;
+-webkit-box-shadow: 0px 1px 2px 0 rgba(0, 0, 0, 0.4);
+  -moz-box-shadow: 0px 1px 2px 0 rgba(0, 0, 0, 0.4);
+  box-shadow: 0px 1px 2px 0 rgba(0, 0, 0, 0.4);
+  margin:0 auto;}
 #mfw-main-text {margin: 10px 0;}
 #mfw-main-text span {height:30px;}
 .mfw-header-text {border:1px dotted #ccc;
@@ -9625,3 +9646,4 @@ p.bjqs-caption{
 }
 
 header.vspace{margin-bottom:1em;}
+#mfw-main-wrapper{border: 3px dashed #aaa;width:800px;margin:5px auto 10px;}
