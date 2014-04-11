@@ -63,22 +63,6 @@
         </script>
     </head>
     <body>
-
-
-    <!-- <div class="md-modal md-effect-16" id="modal-16">
-        <div class="md-content">
-            <h2>Modal Dialog</h2>
-            <div>
-                <p>This is a modal window. You can do the following things with it:</p>
-                <ul>
-                    <li><strong>Read:</strong> modal windows will probably tell you something important so don't forget to read what they say.</li>
-                    <li><strong>Look:</strong> a modal window enjoys a certain kind of attention; just look at it and appreciate its presence.</li>
-                    <li><strong>Close:</strong> click on the button below to close the modal.</li>
-                </ul>
-                <button class="md-close">Ok, got it!</button>
-            </div>
-        </div>
-    </div>!-->
     <!--4,9,11,13,17 !-->
     <div class="md-modal md-effect-13" id="about">
         <div class="md-content">
@@ -114,7 +98,6 @@
                 <p>Sometimes you just have to make a face.</p>
             </header>
             <!-- <button class="md-trigger" data-modal="modal-16">Blur</button> !-->
-                    <!-- special modal that will add a perspective class to the html element -->
                     
             <!-- <button class="md-trigger md-setperspective" data-modal="modal-18">Make way!</button> !-->
             <nav class="ink-navigation">
@@ -136,118 +119,62 @@
                     </li>
                 </ul>
             </nav>
-	            <div id="mfw-outer-rounded" class="vspace">
-	            	<h2 style="border:1px dashed #ccc;width:250px;margin:0 auto 10px;">[img]MFW...[/img]</h2>
-	                {% for thisMFW in varsIn.MFWList %}
-	                	<h2><span class="mfw-main-title">{{ thisMFW.mfw_title }}</span></h2>
-	                {% endfor %}
+            <div id="mfw-outer-rounded" class="vspace">
+            	<h2 class="mfw-header-text-second">[img]MFW...[/img]</h2>
+                {% for thisMFW in varsIn.MFWList %}
+                	<h2><span class="mfw-main-title">{{ thisMFW.mfw_title }}</span></h2>
+                {% endfor %}
 
-	                <!--<div id="mfw-navigate-left">
-	                	<a href="#" data-direction="backward">
-	                		<img src="{% static "img/slider-arrow-left.jpg" %}">
-	                	</a>
-	                </div>!-->
-                    <div id="mfw-main-wrapper">
-    	                <div id="mfw-main">
-    	                	<ul class="bjqs">
-    	                		{% for thisMFW in varsIn.MFWList %}
-                    			<li>
-                    				<img class="mfw-image-main" src="{% static "img/mfw/mfw" %}{{thisMFW.mfw_img_num}}.gif" alt="{{ varsIn.thisMFW.mfw_img_alt }}">
-                    			</li>
-                    			{% endfor %}
+                <div id="mfw-main-wrapper">
+	                <div id="mfw-main">
+	                	<ul class="bjqs">
+	                		{% for thisMFW in varsIn.MFWList %}
+                			<li>
+                				<img class="mfw-image-main" src="{% static "img/mfw/mfw" %}{{thisMFW.mfw_img_num}}.gif" alt="{{ varsIn.thisMFW.mfw_img_alt }}">
+                			</li>
+                			{% endfor %}
 
-    	                	</ul>
-    	                </div>
-                    </div>
-                    <div id="mfw-main-bottom"></div>
-	                <!--<div id="mfw-navigate-right">
-	                	<a href="#" data-direction="forward">
-	                		<img src="{% static "img/slider-arrow-right.jpg" %}">
-	                	</a>
-	                </div>!-->
-	                <div id="mfw-main-text">
-                    {% for thisMFW in varsIn.MFWList %}
-                        <span>{{ thisMFW.mfw_text }}</span>
-                    {% endfor %}
-                    </div>
-                    <div id="mfw-links-wrapper">
-                        <ul class="mfw-links-main">                 
-                    	{% for thisMFWLink in varsIn.MFWLink %}
-                    	
-    	               		{% for thisLink in thisMFWLink %}
-    	                		<li class="mfw-link-{{ forloop.parentloop.counter }} mfw-link">
-    	                			<a href="{{ thisLink.mfw_content_link}}" target="_blank">{{ thisLink.mfw_content_text}}</a>
-    	                		</li>
-    	                	{% endfor %}
-                    	
-                    	{% endfor %}
-                        </ul>
-                    </div>
-	                <div class="mfw-map">
-	                	{#{ varsIn.form.map }#}
-						{#{ varsIn.form.media.js }#}
-					</div>
-	            </div>
-	            
-	            <div class="column-group gutters">
-	                
-	                <div class="large-50">
-	                    <p>
-	                        Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-	                    </p>
+	                	</ul>
 	                </div>
-	                <div class="large-50">
-	                    <p>
-	                        Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-	                    </p>
-	                </div>
-	                
-	            </div>
-
-<!---	                        
-	            <h4>... thirds ...</h4>
-	            <div class="column-group gutters">
-	                
-	                <div class="large-33 medium-33 small-100">
-	                    <p>
-	                        Upon waking next morning about daylight, I found Queequeg's arm thrown over me in the most loving and affectionate manner. You had lmost thought I had been his wife. The counterpane was of patchwork, full of odd little parti-coloured squares and triangles; and this arm of his tattooed all ver with an interminable Cretan labyrinth of a figure, no two parts of which were of one precise shade&mdash;owing I suppose to his keeping his arm at sea nmethodically in sun and shade, his shirt sleeves irregularly rolled up at various times&mdash;this same arm of his, I say, looked for all the world like a trip of that same patchwork quilt.
-	                    </p>
-	                </div>
-	                <div class="large-33 medium-33 small-100">
-	                    <p>
-	                        Upon waking next morning about daylight, I found Queequeg's arm thrown over me in the most loving and affectionate manner. You had lmost thought I had been his wife. The counterpane was of patchwork, full of odd little parti-coloured squares and triangles; and this arm of his tattooed all ver with an interminable Cretan labyrinth of a figure, no two parts of which were of one precise shade&mdash;owing I suppose to his keeping his arm at sea nmethodically in sun and shade, his shirt sleeves irregularly rolled up at various times&mdash;this same arm of his, I say, looked for all the world like a trip of that same patchwork quilt.
-	                    </p>
-	                </div>
-	                <div class="large-33 medium-33 small-100">
-	                    <p>
-	                        Upon waking next morning about daylight, I found Queequeg's arm thrown over me in the most loving and affectionate manner. You had lmost thought I had been his wife. The counterpane was of patchwork, full of odd little parti-coloured squares and triangles; and this arm of his tattooed all ver with an interminable Cretan labyrinth of a figure, no two parts of which were of one precise shade&mdash;owing I suppose to his keeping his arm at sea nmethodically in sun and shade, his shirt sleeves irregularly rolled up at various times&mdash;this same arm of his, I say, looked for all the world like a trip of that same patchwork quilt.
-	                    </p>
-	                </div>
-	            </div>
-
-	            <h4>... fourths and more.</h4>
-	            <div class="column-group gutters">
-	                <div class="large-25 medium-50 small-100">
-	                    <p>
-	                        Upon waking next morning about daylight, I found Queequeg's arm thrown over me in the most loving and affectionate manner. You had lmost thought I had been his wife. The counterpane was of patchwork, full of odd little parti-coloured squares and triangles; and this arm of his tattooed all ver with an interminable Cretan labyrinth of a figure, no two parts of which were of one precise shade&mdash;owing I suppose to his keeping his arm at sea nmethodically in sun and shade, his shirt sleeves irregularly rolled up at various times&mdash;this same arm of his, I say, looked for all the world like a trip of that same patchwork quilt.
-	                    </p>
-	                </div>
-	                <div class="large-25 medium-50 small-100">
-	                    <p>
-	                        Upon waking next morning about daylight, I found Queequeg's arm thrown over me in the most loving and affectionate manner. You had lmost thought I had been his wife. The counterpane was of patchwork, full of odd little parti-coloured squares and triangles; and this arm of his tattooed all ver with an interminable Cretan labyrinth of a figure, no two parts of which were of one precise shade&mdash;owing I suppose to his keeping his arm at sea nmethodically in sun and shade, his shirt sleeves irregularly rolled up at various times&mdash;this same arm of his, I say, looked for all the world like a trip of that same patchwork quilt.
-	                    </p>
-	                </div>
-	                <div class="large-25 medium-50 small-100">
-	                    <p>
-	                        Upon waking next morning about daylight, I found Queequeg's arm thrown over me in the most loving and affectionate manner. You had lmost thought I had been his wife. The counterpane was of patchwork, full of odd little parti-coloured squares and triangles; and this arm of his tattooed all ver with an interminable Cretan labyrinth of a figure, no two parts of which were of one precise shade&mdash;owing I suppose to his keeping his arm at sea nmethodically in sun and shade, his shirt sleeves irregularly rolled up at various times&mdash;this same arm of his, I say, looked for all the world like a trip of that same patchwork quilt.
-	                    </p>
-	                </div>
-	                <div class="large-25 medium-50 small-100">
-	                    <p>
-	                        Upon waking next morning about daylight, I found Queequeg's arm thrown over me in the most loving and affectionate manner. You had lmost thought I had been his wife. The counterpane was of patchwork, full of odd little parti-coloured squares and triangles; and this arm of his tattooed all ver with an interminable Cretan labyrinth of a figure, no two parts of which were of one precise shade&mdash;owing I suppose to his keeping his arm at sea nmethodically in sun and shade, his shirt sleeves irregularly rolled up at various times&mdash;this same arm of his, I say, looked for all the world like a trip of that same patchwork quilt.
-	                    </p>
-	                </div>
-	            </div> !-->
+                </div>
+                <div id="mfw-main-bottom"></div>
+                <div id="mfw-main-text">
+                {% for thisMFW in varsIn.MFWList %}
+                    <span>{{ thisMFW.mfw_text }}</span>
+                {% endfor %}
+                </div>
+                <div id="mfw-links-wrapper">
+                    <ul class="mfw-links-main">                 
+                	{% for thisMFWLink in varsIn.MFWLink %}
+                	
+	               		{% for thisLink in thisMFWLink %}
+	                		<li class="mfw-link-{{ forloop.parentloop.counter }} mfw-link">
+	                			<a href="{{ thisLink.mfw_content_link}}" target="_blank">{{ thisLink.mfw_content_text}}</a>
+	                		</li>
+	                	{% endfor %}
+                	
+                	{% endfor %}
+                    </ul>
+                </div>
+                <div class="mfw-map">
+                	{#{ varsIn.form.map }#}
+					{#{ varsIn.form.media.js }#}
+				</div>
+            </div>
+            
+            <div class="column-group gutters">
+                
+                <div class="large-50">
+                    <p>
+                        Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+                    </p>
+                </div>
+                <div class="large-50">
+                    <p>
+                        Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+                    </p>
+                </div>
+            </div>
         </div>
 
         <footer>
@@ -268,15 +195,22 @@
         
         <script type="text/javascript" src="{% static "js/classie.js" %}"></script>
         <script type="text/javascript" src="{% static "js/modalEffects.js" %}"></script>
-
-        <!-- for the blur effect -->
-        <!-- by @derSchepp https://github.com/Schepp/CSS-Filters-Polyfill -->
-        <script>
+        <!--<script>
             // this is important for IEs
             var polyfilter_scriptpath = '/js/';
-        </script>
+        </script>!-->
         <script type="text/javascript" src="{% static "js/cssParser.js" %}"></script>
-        <script type="text/javascript" src="{% static "js/css-filters-polyfill.js" %}"></script>
+        <!--<script type="text/javascript" src="{% static "js/css-filters-polyfill.js" %}"></script>!-->
+        <script>
+          (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+          (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+          m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+          })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+          ga('create', 'UA-49934201-1', 'mfwdaily.com');
+          ga('send', 'pageview');
+
+        </script>
         <div class="md-overlay"></div><!-- the overlay element -->
     </body>
 </html>

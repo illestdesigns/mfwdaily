@@ -9602,7 +9602,13 @@ div.gmap img{position:relative !important;}
   font-size:2.5em;
   max-width:100%;
 }
-
+.mfw-header-text-second
+{
+  border:1px dashed #ccc;
+  width:300px;
+  margin:0 auto 10px;
+  max-width:100%;
+}
 
 #container{
   max-width:620px;
