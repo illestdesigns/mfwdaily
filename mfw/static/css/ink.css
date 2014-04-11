@@ -9684,4 +9684,16 @@ header.vspace{margin-bottom:1em;}
 .md-content ul li span {font-size:1em;}
 .md-content ul li span:first-child {display:inline-block;width:80px;text-align:left;color:#222;}
 .md-content ul li span:last-child {display:inline-block;width:175px;text-align:right;}
-.mfw-about {padding:15px 0 30px !important;}
+.mfw-about { padding:15px 0 30px !important; }
+.mfw-about-basics {
+  color:#c0392b;
+  text-shadow: 1px 1px 0px #666;
+}
+
+@media print { 
+  .vspace-left{ display: none;}
+
+  body { font: 12pt georgia,serif; } 
+  h1 { font-size: 18pt; } 
+  h2 { font-size: 16pt; color: #000; }
+}
